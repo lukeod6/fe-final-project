@@ -1,15 +1,15 @@
 import {Link} from "react-router-dom";
 
-export default function Nav () {
+export default function Nav (props) {
     return (
         <div>
             <nav className="navbar">
-                <Link className="nav-item"to="/">Home</Link>
+                <Link className="nav-item" to="/">Home</Link>
                 <Link className="nav-item" to="/users">Users</Link>
                 <div className="subnav">
                     <button className="subnavbtn">Categories </button>
                     <div className="subnav-content">
-                        <button className="category-button">Strategy</button>
+                        <button className="category-button" onClick={() => props.setCategory("strategy") }>Strategy</button>
                         <button className="category-button">Hidden Roles</button>
                         <button className="category-button">Dexterity</button>
                         <button className="category-button">Push Your Luck</button>

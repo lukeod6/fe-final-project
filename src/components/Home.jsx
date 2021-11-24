@@ -1,18 +1,12 @@
 import ReviewCard from "./ReviewCard";
-import {getReviews} from "../utils/api";
-import {useEffect} from "react";
 
 
-export default function Home () {
-    useEffect(() => {
-        getReviews().then((reviews) => {
-            console.log(reviews);
-        });
-    }, [])
+export default function Home (props) {
+
 
     return (
         <>
-            <ReviewCard />
+            <ReviewCard reviewId={props.reviewId} setReviewId={props.setReviewId}  reviews={props.reviews} setReviews={props.setReviews} selectedReview={props.selectedReview} setSelectedReview={props.setSelectedReview}/>
         </>
     );
 };
