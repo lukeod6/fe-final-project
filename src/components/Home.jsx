@@ -1,12 +1,12 @@
 import ReviewCard from "./ReviewCard";
 
 
-export default function Home (props) {
+export default function Home ({category, setReviews, reviews, reviewId, setReviewId, setSelectedReview, selectedReview}) {
 
 
     return (
         <>
-            <ReviewCard reviewId={props.reviewId} setReviewId={props.setReviewId}  reviews={props.reviews} setReviews={props.setReviews} selectedReview={props.selectedReview} setSelectedReview={props.setSelectedReview}/>
+            <ReviewCard category={category} reviewId={reviewId} setReviewId={setReviewId}  reviews={reviews} setReviews={setReviews} selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>
         </>
     );
 };

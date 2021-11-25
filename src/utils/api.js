@@ -19,3 +19,11 @@ export const getReviewById = (id) => {
         console.log(error);
     })
 };
+
+export const getReviewByCategory = (category) => {
+    return reviewApi.get(`/reviews?category=${category}`).then((res) => {
+        return res.data.reviews;
+    }).catch(function (error) {
+        console.log(error);
+    })
+};

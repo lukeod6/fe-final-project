@@ -22,8 +22,9 @@ function App() {
             <Header />
             <Nav setCategory={setCategory}/>
             <Routes>
-                <Route path="/" element={<Home reviewId={reviewId} setReviewId={setReviewId} reviews={reviews} setReviews={setReviews} selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>} />
+                <Route path="/" element={<Home category={category} reviewId={reviewId} setReviewId={setReviewId} reviews={reviews} setReviews={setReviews} selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>} />
                 <Route path="/reviews/:reviewId" element={<ReviewPage reviewId={reviewId} setReviewId={setReviewId} reviews={reviews} selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>} />
+                <Route path="/reviews/:category" element={<ReviewPage reviewId={reviewId} setReviewId={setReviewId} reviews={reviews} selectedReview={selectedReview} setSelectedReview={setSelectedReview}/>} />
                 <Route path="/users" element={<Users />} />
                 <Route path="/login" element={<Login />} />
             </Routes>
