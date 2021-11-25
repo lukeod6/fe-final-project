@@ -27,3 +27,12 @@ export const getReviewByCategory = (category) => {
         console.log(error);
     })
 };
+
+export const getCommentsByReview = (id) => {
+    return reviewApi.get(`/reviews/${id}/comments`).then((res) => {
+        console.log(res.data.comments, 'ran in api')
+        return res.data.comments;
+    }).catch(function (error) {
+        console.log(error);
+    })
+};
