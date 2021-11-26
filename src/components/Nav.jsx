@@ -1,11 +1,17 @@
 import {Link} from "react-router-dom";
+import {useContext} from "react";
+import {UserContext} from "../contexts/User";
 
 export default function Nav ({setCategory}) {
+
+    const {user} = useContext(UserContext);
+
     return (
         <div>
             <nav className="navbar">
-                <Link className="nav-item" to="/">Home</Link>
-                <Link className="nav-item" to="/users">Users</Link>
+                <Link to="/">Home</Link>
+                <Link to="/login">Login</Link>
+                <Link to="/login" id="user-in-nav">{user.username}</Link>
                 <div className="subnav">
                     <button className="subnavbtn">Categories </button>
                     <div className="subnav-content">
@@ -18,9 +24,7 @@ export default function Nav ({setCategory}) {
                         <button className="category-button" onClick={() => setCategory("engine-building") }>Engine building</button>
                     </div>
                 </div>
-                <Link className="nav-item" to="/login">Login</Link>
             </nav>
         </div>
     );
 };
-

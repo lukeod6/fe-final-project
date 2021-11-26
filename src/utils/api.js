@@ -62,3 +62,15 @@ export const addCommentForReviewById = (id, reviewBody, username) => {
         console.log(error);
     })
 };
+
+export const addNewUser = (username, name, avatar_url) => {
+    return reviewApi.post(`/users`, {
+        username: username,
+        name: name,
+        avatar_url: avatar_url} ).then((res) => {
+        console.log(res.data)
+        return res.data.user;
+    }).catch(function (error) {
+        console.log(error);
+    })
+};

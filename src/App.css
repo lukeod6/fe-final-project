@@ -75,6 +75,12 @@ h1 {
   display: block;
 }
 
+#user-in-nav {
+  list-style-type: none;
+  float: right;
+  margin-right: 200px;
+}
+
 .category-button {
   float: left;
   display: block;
@@ -195,4 +201,26 @@ h1 {
 
 #comment-input-label {
   margin-bottom: 60px;
+  margin-right: 20px;
+}
+
+#comment-submit-button {
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+
+.login {
+  padding: 20px;
+}
+
+#login-input {
+  border: 2px solid;
+  padding: 5px;
+  margin-left: 80px;
+}
+
+#login-button {
+  border: 2px solid;
+  padding: 5px;
+  margin-left: 20px;
 }

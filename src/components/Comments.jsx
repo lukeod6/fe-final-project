@@ -1,4 +1,4 @@
-import {getCommentsByReview} from "../utils/api";
+import {addVoteForCommentById, addVoteForReviewById, getCommentsByReview} from "../utils/api";
 import {useEffect, useState} from "react";
 
 
@@ -13,6 +13,12 @@ export default function Login ({reviewId}) {
             setComments(commentData);
         });
     }, [reviewId]);
+
+    useEffect(() => {
+        addVoteForCommentById(selectedComment.comment_id, 1).then((vote) => {
+            setReviewVoteCount(vote);
+        });
+    }, [selectedReview.votes]);
 
     const handleCommentVoteClick = () => {
         setCommentVoteCount(() => selectedComment.votes ++);
