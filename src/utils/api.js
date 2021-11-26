@@ -30,8 +30,34 @@ export const getReviewByCategory = (category) => {
 
 export const getCommentsByReview = (id) => {
     return reviewApi.get(`/reviews/${id}/comments`).then((res) => {
-        console.log(res.data.comments, 'ran in api')
         return res.data.comments;
+    }).catch(function (error) {
+        console.log(error);
+    })
+};
+
+export const addVoteForReviewById = (id, vote) => {
+    return reviewApi.patch(`/reviews/${id}`, { inc_votes: vote} ).then((res) => {
+        return res.data.review.votes;
+    }).catch(function (error) {
+        console.log(error);
+    })
+};
+
+export const addVoteForCommentById = (id, vote) => {
+    return reviewApi.patch(`/comments/${id}`, { inc_votes: vote} ).then((res) => {
+        return res.data.comment.votes;
+    }).catch(function (error) {
+        console.log(error);
+    })
+};
+
+export const addCommentForReviewById = (id, reviewBody, username) => {
+    return reviewApi.patch(`/reviews/${id}/comments`, {
+        username: username,
+            body: reviewBody
+    } ).then((res) => {
+        return res.data.comment;
     }).catch(function (error) {
         console.log(error);
     })
