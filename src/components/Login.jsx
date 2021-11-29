@@ -9,7 +9,6 @@ export default function Login () {
 
     useEffect(() => {
         addNewUser(user.username, user.name, user.avatar_url).then((userData) => {
-            console.log(userData);
         });
     }, [user]);
 
@@ -19,7 +18,6 @@ export default function Login () {
         });
     }
 
-    // console.log(user.username, user.name, user.avatar_url)
 
     return (
         <>

@@ -29,7 +29,7 @@ export default function ReviewPage ({selectedReview, reviewId}) {
                     <li className="review-info" id="review-votes" key={selectedReview.category}>votes: {selectedReview.votes} <button onClick={handleReviewVoteClick}>⬆️</button></li>
                 </div>
             </ul>
-            <Comments reviewId={reviewId}/>
+            <Comments reviewId={reviewId} setReviewVoteCount={setReviewVoteCount} selectedReview={selectedReview}/>
         </>
     );
 };

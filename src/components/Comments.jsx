@@ -1,8 +1,8 @@
-import {addVoteForCommentById, addVoteForReviewById, getCommentsByReview} from "../utils/api";
+import {addVoteForCommentById, getCommentsByReview} from "../utils/api";
 import {useEffect, useState} from "react";
 
 
-export default function Login ({reviewId}) {
+export default function Comments ({reviewId, setReviewVoteCount, selectedReview}) {
 
     const [comments, setComments] = useState([]);
     const [selectedComment, setSelectedComment] = useState([]);
